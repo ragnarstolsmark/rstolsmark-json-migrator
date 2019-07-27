@@ -8,9 +8,7 @@ export interface IAppliedMigration {
   dateApplied: Date;
 }
 
-export class MigrationError extends Error {}
-
-export default function Migrate(
+export function migrate(
   migrations: IMigration[],
   appliedMigrations: IAppliedMigration[]
 ) {

@@ -1,4 +1,4 @@
-import Migrate, { IMigration, IAppliedMigration } from "../index";
+import { IAppliedMigration, IMigration, migrate } from "../index";
 
 let objectToMigrate: any;
 
@@ -40,7 +40,7 @@ function getTwoFirstMigrations() {
 test("Run migrations", () => {
   objectToMigrate = {};
   const migrations = getMigrations();
-  Migrate(migrations, []);
+  migrate(migrations, []);
   expect(objectToMigrate.name).toBeDefined();
   expect(objectToMigrate.telephone).toBeDefined();
   expect(objectToMigrate.age).toBeDefined();
@@ -50,12 +50,12 @@ test("Run migrations", () => {
 test("Migrate from nothing to delta 04 via delta 02", () => {
   objectToMigrate = {};
   const alreadyRunMigrations = [] as IAppliedMigration[];
-  Migrate(getTwoFirstMigrations(), alreadyRunMigrations);
+  migrate(getTwoFirstMigrations(), alreadyRunMigrations);
   expect(objectToMigrate.name).toBeDefined();
   expect(objectToMigrate.telephone).toBeDefined();
   expect(objectToMigrate.age).toBeUndefined();
   expect(objectToMigrate.address).toBeUndefined();
-  Migrate(getMigrations(), alreadyRunMigrations);
+  migrate(getMigrations(), alreadyRunMigrations);
   expect(objectToMigrate.name).toBeDefined();
   expect(objectToMigrate.telephone).toBeDefined();
   expect(objectToMigrate.age).toBeDefined();
