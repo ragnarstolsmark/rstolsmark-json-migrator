@@ -1,0 +1,26 @@
+{
+  "name": "rstolsmark-json-migrator",
+  "version": "1.0.0",
+  "description": "A library for migrating JSON objects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ragnarstolsmark/rstolsmark-json-migrator.git"
+  },
+  "keywords": [
+    "JSON",
+    "migrate",
+    "migration",
+    "migrations",
+    "migrator"
+  ],
+  "author": "Ragnar Stølsmark",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ragnarstolsmark/rstolsmark-json-migrator/issues"
+  },
+  "homepage": "https://github.com/ragnarstolsmark/rstolsmark-json-migrator#readme"
+}
