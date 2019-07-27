@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/ragnarstolsmark/rstolsmark-json-migrator/issues"
   },
-  "homepage": "https://github.com/ragnarstolsmark/rstolsmark-json-migrator#readme"
+  "homepage": "https://github.com/ragnarstolsmark/rstolsmark-json-migrator#readme",
+  "devDependencies": {
+    "typescript": "^3.5.3"
+  }
 }
