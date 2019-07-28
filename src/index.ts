@@ -11,15 +11,17 @@ export interface IAppliedMigration {
 export function migrate(
   migrations: IMigration[],
   appliedMigrations: IAppliedMigration[]
-) {
+): IAppliedMigration[] {
   const migrationsToRun = migrations.filter(
     m => appliedMigrations.filter(a => a.name === m.name).length === 0
   );
+  const appliedMigrationsThisTime = [] as IAppliedMigration[];
   migrationsToRun.forEach(m => {
     m.up();
-    appliedMigrations.push({
+    appliedMigrationsThisTime.push({
       name: m.name,
       dateApplied: new Date()
     });
   });
+  return appliedMigrationsThisTime;
 }
